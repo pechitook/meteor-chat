@@ -1,0 +1,19 @@
+<template name="Menu">
+    <header>
+        <h2>Menu</h2>
+    </header>
+    {{#if currentUser}}
+    <ul>
+        <li data-action="logout">Logout</li>
+    </ul>
+    {{/if}} {{#unless currentUser}}
+    <ul>
+        <li data-action="login-twitter">Login with Twitter</li>
+    </ul>
+    {{/unless}}
+    <div class="footer">
+        Made with <span style="color: #CB6262">❤</span> by <a href="//twitter.com/p4bloch">p4bloch</a>
+        <br/>
+        <a href="//meteor.com">Fork me, baby</a>.
+    </div>
+</template>
