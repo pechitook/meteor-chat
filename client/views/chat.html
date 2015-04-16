@@ -2,10 +2,7 @@
     <div class="container-fluid chat-wrapper">
         <div class="row messages">
             {{#each messages}}
-            <div class="message {{#if belongsToMe this}}mine{{/if}}">
-                {{#if belongsToOther this}}<span>@{{user.services.twitter.screenName}}: </span>{{/if}}
-                {{message}}
-            </div>
+                {{> Message}}
             {{/each}}
         </div>
         <div class="row new-message">
@@ -14,5 +11,13 @@
                 <input type="submit" value="Send">
             </form>
         </div>
+    </div>
+</template>
+
+
+<template name="Message">
+    <div class="message {{#if belongsToMe this}}mine{{/if}}">
+        {{#if belongsToOther this}}<span>@{{user.services.twitter.screenName}}: </span>{{/if}}
+        {{message}}
     </div>
 </template>
