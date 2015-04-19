@@ -1,3 +1,5 @@
+Meteor.subscribe('messages');
+
 Template.Chat.events({
     'submit form': function(e) {
         e.preventDefault();
