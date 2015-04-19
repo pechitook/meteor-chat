@@ -6,9 +6,10 @@
     <ul>
         <li data-action="logout">Logout</li>
     </ul>
-    {{/if}} {{#unless currentUser}}
+    {{/if}}
+    {{#unless currentUser}}
     <ul>
-        <li data-action="login-twitter">Login with Twitter</li>
+        <li data-action="login-twitter"><i class="icon ion-social-twitter"></i>&nbsp; Login</li>
     </ul>
     {{/unless}}
     <div class="footer">

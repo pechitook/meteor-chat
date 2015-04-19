@@ -4,14 +4,15 @@ Template.Chat.events({
         var input = $(e.currentTarget).find('[name=message]');
         var message = input.val();
         if (!message.trim()) return null;
-        if (!Meteor.user()) return alert('You need to login first');
         Messages.insert({
             user: Meteor.user(),
             message: message,
             createdAt: new Date()
         });
         input.val('');
-        goToEnd();
+    },
+    'click .login': function(e){
+        Meteor.loginWithTwitter();
     }
 });
 

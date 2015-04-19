@@ -5,12 +5,19 @@
                 {{> Message}}
             {{/each}}
         </div>
+        {{#if currentUser}}
         <div class="row new-message">
             <form>
                 <input type="text" name="message" />
                 <input type="submit" value="Send">
             </form>
         </div>
+        {{/if}}
+        {{#unless currentUser}}
+        <div class="row new-message">
+            <div class="login"><i class="icon ion-social-twitter"></i>&nbsp; Login to chat</div>
+        </div>
+        {{/unless}}
     </div>
 </template>
 
