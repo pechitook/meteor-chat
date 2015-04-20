@@ -6,11 +6,7 @@ Template.Chat.events({
         var input = $(e.currentTarget).find('[name=message]');
         var message = input.val();
         if (!message.trim()) return null;
-        Messages.insert({
-            user: Meteor.user(),
-            message: message,
-            createdAt: new Date()
-        });
+        Meteor.call("createMessage", message);
         input.val('');
     },
     'click .login': function(e){
