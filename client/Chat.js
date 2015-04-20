@@ -1,4 +1,8 @@
-Meteor.subscribe('messages');
+var messages;
+
+Tracker.autorun(function() {
+    messages = Meteor.subscribe('messages');
+});
 
 Template.Chat.events({
     'submit form': function(e) {
@@ -9,7 +13,7 @@ Template.Chat.events({
         Meteor.call("createMessage", message);
         input.val('');
     },
-    'click .login': function(e){
+    'click .login': function(e) {
         Meteor.loginWithTwitter();
     }
 });
@@ -17,5 +21,8 @@ Template.Chat.events({
 Template.Chat.helpers({
     messages: function() {
         return Messages.find({});
+    },
+    isReady: function() {
+        return messages.ready();
     }
 });

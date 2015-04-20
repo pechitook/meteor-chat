@@ -1,9 +1,15 @@
 <template name="Chat">
     <div class="container-fluid chat-wrapper">
         <div class="row messages">
-            {{#each messages}}
-                {{> Message}}
-            {{/each}}
+            {{#if isReady}}
+                {{#each messages}}
+                    {{> Message}}
+                {{/each}}
+            {{else}}
+            <div class="loading">
+                <div class="loader-inner ball-scale-ripple-multiple"><div></div><div></div><div></div></div>
+            </div>
+            {{/if}}
         </div>
         {{#if currentUser}}
         <div class="row new-message">
