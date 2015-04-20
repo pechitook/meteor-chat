@@ -115,26 +115,40 @@ input[type=submit] {
     padding: 0 !important;
 }
 
-.message {
+.msg-wrapper {
     float: left;
     clear: both;
-    background: rgb(22, 38, 54);
+    .message {
+        background: rgb(22, 38, 54);
+        font-size: 13px;
+        border-radius: 9px;
+        padding: 12px 15px;
+        color: #fff;
+    }
+    .timestamp {
+        float: left;
+        color: #bbb;
+        font-size: 11px;
+        margin-right: 3px;
+    }
     margin: 3px 6px;
-    font-size: 13px;
-    border-radius: 9px;
-    padding: 12px 15px;
-    color: #fff;
     display: inline-block;
-    span {
+    span.username {
         color: #5596C0;
     }
     &.mine {
         float: right;
-        background: #DFC332;
-        color: #162636;
-        text-align: right;
-        span {
+        .message {
+            background: #DFC332;
+            color: #162636;
+            text-align: right;
+        }
+        span.username {
             color: #fff;
+        }
+        .timestamp {
+            float: right;
+            margin-right: 3px;
         }
     }
 }

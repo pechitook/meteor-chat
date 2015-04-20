@@ -29,8 +29,11 @@
 
 
 <template name="Message">
-    <div class="message {{#if belongsToMe this}}mine{{/if}}">
-        {{#if belongsToOther this}}<span>@{{user.services.twitter.screenName}}: </span>{{/if}}
-        {{message}}
+    <div class="msg-wrapper {{#if belongsToMe this}}mine{{/if}}">
+        <div class="message">
+            {{#if belongsToOther this}}<span class="username">@{{user.services.twitter.screenName}}: </span>{{/if}}
+            {{message}}
+        </div>
+        <span class="timestamp">{{getTime this}}</span>
     </div>
 </template>

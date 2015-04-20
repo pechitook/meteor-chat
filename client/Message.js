@@ -4,6 +4,9 @@ Template.Message.helpers({
     },
     belongsToOther: function(message) {
         return message.user._id != Meteor.userId();
+    },
+    getTime: function(message){
+        return message.createdAt.toLocaleTimeString();
     }
 });
 
